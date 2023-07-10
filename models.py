@@ -1,7 +1,14 @@
-# Random weights initializer
+# Import required libraries
+import tensorflow as tf
+from tensorflow.keras import layers
+
+
+## BUILD GENERATOR MODEL
+
+# Initalize random weights
 init_weights_kernel = tf.keras.initializers.RandomNormal(mean = 0.0, stddev = 0.02)
 
-# Generator model architecture
+# Define generator model architecture
 def generator_model():
     model = tf.keras.Sequential()
 
@@ -32,7 +39,10 @@ def generator_model():
 
     return model
 
-# Discriminator model architecture
+
+## BUILD DISCRIMINATOR MODEL
+
+# Define discriminator model architecture
 def discriminator_model():
     model = tf.keras.Sequential()
 
@@ -64,3 +74,4 @@ def discriminator_model():
     model.add(layers.Dense(1, activation = 'sigmoid'))
 
     return model
+
