@@ -1,7 +1,6 @@
-# Import required libraries
 import tensorflow as tf
 from tensorflow.keras import layers
-
+from tqdm import tqdm
 
 ## BUILD GENERATOR MODEL
 
@@ -74,4 +73,3 @@ def discriminator_model():
     model.add(layers.Dense(1, activation = 'sigmoid'))
 
     return model
-
